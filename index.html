@@ -13,11 +13,32 @@
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+<style>
+	blockquote {
+	    border-right: 0px;
+	    border-top: 0px;
+	    border-bottom: 0px;
+	}
+	.print-alert {
+		position: fixed;
+		bottom: 30px;
+		left: 0;
+		width: 100%;
+	    z-index:2; 
+	}
+	.print-alert .alert {
+		margin: auto;
+		width: 30%;
+	}
+</style>
 </head>
 <body>
+	<div class="page-margin hidden-print">
+		<div style="height: 30px;"></div>
+	</div>
 	<div class="container-fluid">
 		<div id="header" class="row">
-			<div id="address" class="col-md-4">
+			<div id="address" class="col-md-4 hidden-print">
 				<address style="margin-bottom: 0px;">
 				<strong><i class="fa fa-map-marker" aria-hidden="true"></i> Address</strong><br>
 				355 N. Wolfe Rd. #321,<br/>
@@ -29,7 +50,7 @@
 				<h1>Alan Chou</h1>
 			</div>
 
-			<div id="contact" class="col-md-4">
+			<div id="contact" class="col-md-4 hidden-print">
 				<dl class="dl-horizontal pull-right" style="margin-bottom: 0px;">
 					<dt><i class="fa fa-phone-square" aria-hidden="true"></i> Phone</dt>
 					<dd><a href="tel:+1">0919-175-104</a></dd>
@@ -42,16 +63,27 @@
 				</dl>
 			</div>
 		</div>
-		<hr>
+		<hr class="hidden-print">
 		<div id="content">
-			<section>
+			<section class="hidden-print">
 				<article>
 					<div id="description">
 						<h4><i class="fa fa-info-circle" aria-hidden="true"></i> About</h4>
-						<blockquote class="">
-							<p class="lead">More then 2 years of experience on Java programming from Taiwan, focused on web service development. <br/>
+						<blockquote>
+							<p class="lead">More then 2 years of experience on Java programming, focused on web app development. <br/>
 							I'm humble but a fast learner, I'm willing to take upon any challenges.</p>
 						</blockquote>
+					</div>
+				</article>
+			</section>
+			<section class="visible-print-block">
+				<article>
+					<div id="contact">
+						<ul class="list-inline">
+							<li><i class="fa fa-envelope" aria-hidden="true"></i> tdangel610@gmail.com</li>
+							<li><i class="fa fa-map-marker" aria-hidden="true"></i> 355 N. Wolfe Rd. #321, Sunnyvale, California 94085</li>
+							<li><i class="fa fa-phone-square" aria-hidden="true"></i> 0919-175-104</li>
+						</ul>
 					</div>	
 				</article>
 			</section>
@@ -59,7 +91,7 @@
 			<section>
 				<article>
 					<div id="skills">
-						<h4><i class="fa fa-bolt" aria-hidden="true"></i> Skills <small>Skilled in languages and frameworks related to Java web development</small></h4>
+						<h4><i class="fa fa-bolt" aria-hidden="true"></i> Skills <small class="hidden-print">Skilled in languages and frameworks related to Java web development</small></h4>
 						<blockquote>
 							<div class="well well-sm" style="margin-bottom: 0px;">
 								<span class="label label-default">Java</span>
@@ -76,31 +108,31 @@
 					</div>	
 				</article>
 			</section>
-			<hr>
+			<hr class="hidden-print">
 			<section>
 				<article>
 					<div id="experience">
-						<h4><i class="fa fa-briefcase" aria-hidden="true"></i> Experience <small>More then 2 years of working experience</small></h4>
-						<blockquote>
+						<h4><i class="fa fa-briefcase" aria-hidden="true"></i> Experience <small class="hidden-print">More then 2 years of working experience</small></h4>
+						<blockquote style="margin-bottom: 10px;">
 							<h4>2 Years Of Full-stack Web Developer
 								<small style="display: inline-block;">RiverSoft Information Inc.</small>
-								<footer>2014 Fall ~ 2016 Fall</footer>
+								<footer>2014 ~ 2016</footer>
 							</h4>
 							<ul>
 								<li>Web Service for travel agencies with Struts2 and Spring</li>
 								<li>Business transactions APIs such as Paypal, BluePay, Pay2Go, etc.</li>
 								<li>Intregrated other services from Amadeus E-Ticketing, Amazon Aws S3, TipTop Gp; Also build web APIs</li>
 								<li>Built websites with jsp and javascript like 
-									<a href="http://www.joyholiday.com/" target="_blank">Joy Holiday</a>, 
-									<a href="http://www.localgo.com.tw/C/ch/home" target="_blank">Localgo</a>, 
-									<a href="http://www.ktour.com.tw/C/ch/home" target="_blank">Ktour</a>, 
-									<a href="http://testgofun.clicugo.com/C/ch/home" target="_blank">Gofun</a>
+									<a href="http://www.joyholiday.com/" target="_blank" class="hidden-print">Joy Holiday</a><span class="visible-print-inline">Joy Holiday</span>, 
+									<a href="http://www.localgo.com.tw/C/ch/home" target="_blank" class="hidden-print">Localgo</a><span class="visible-print-inline">Localgo</span>, 
+									<a href="http://www.ktour.com.tw/C/ch/home" target="_blank" class="hidden-print">Ktour</a><span class="visible-print-inline">Ktour</span>, 
+									<a href="http://testgofun.clicugo.com/C/ch/home" target="_blank" class="hidden-print">Gofun</a><span class="visible-print-inline">Gofun</span>
 									, etc.
 								</li>
 								<li>Developed Java tools such as Excel generator util, Html formatter, collection diff and intersect function, tree node recursive handler</li>
 								<li>Other tourism planning functions such as tour sight blogging tool, vehicle and driver managing system, a flexible product promotion event design interface, and many more</li>
 								<li>Demonstrated the systems expandability to our customers and won two competitive cases</li>
-								<li>Interviewed four persons, hired and trained two of them</li>
+								<li>Interviewed four applicant, hired and trained two of them</li>
 							</ul>
 						</blockquote>
 						<blockquote>
@@ -110,19 +142,19 @@
 							</h4>
 							<ul>
 								<li>Market Analysis with Big Data and Text Mining</li>
-								<li>Fetch chinese websites and implement web crawlers</li>
-								<li>parse website contents with by content differing and regex replacing</li>
-								<li>generate daily/weekly reports on product useage</li>
+								<li>Fetch Chinese websites and implement web crawlers</li>
+								<li>Parse website contents with text differing and regex replacing technique</li>
+								<li>Generate daily/weekly reports on product useage</li>
 							</ul>
 						</blockquote>
 					</div>	
 				</article>
 			</section>
-			<hr>
+			<hr class="hidden-print">
 			<section>
 				<article>
 					<div id="education">
-						<h4><i class="fa fa-graduation-cap" aria-hidden="true"></i> Education <small>Bachelor's degree in Information System</small></h4>
+						<h4><i class="fa fa-graduation-cap" aria-hidden="true"></i> Education <small class="hidden-print">Bachelor's degree in Information System</small></h4>
 						<blockquote>
 							<h4>National Taiwan University of Science and Technology (GPA: 3.54) <small>Information System, Bachelor of Business Administration (B.B.A.)</small></h4>
 						</blockquote>
@@ -130,11 +162,45 @@
 				</article>
 			</section>
 		</div>
+		<div class="hidden-print">
+			<hr>
+			<div id="print" class="text-center">
+				<button type="button" class="btn btn-info" id="print-button">Print</button>
+			</div>
+			<div class="print-alert text-center">
+				<div class="alert alert-success" role="alert">
+					<a href="#" class="alert-link" id="print-notification">This page was designed to be printed.<br/>Print button at the end of page</a>
+				</div>
+			</div>
+		</div>
 	</div>
-
+	<div class="page-margin hidden-print">
+		<div style="height: 30px;"></div>
+	</div>
 <script>
 $(function(){
 
+	//print button
+	$("#print-button").click(function(){
+		window.print();
+	});
+
+	//print button notification
+	setTimeout(function(){ 
+		$(".print-alert").fadeOut(1400);
+	}, 2000);
+
+	//hide notification on scroll
+	$(document).scroll(function(){
+		$(".print-alert").fadeOut(400);
+	});
+
+	//print notification click event
+	$("#print-notification").click(function(){
+		$("body").animate({
+			scrollTop: $("#print-button").offset().top
+		},600);
+	});
 
 });
 </script>
