@@ -29,6 +29,7 @@
 	.print-alert .alert {
 		margin: auto;
 		width: 30%;
+		min-width: 350px;
 	}
 </style>
 </head>
@@ -38,19 +39,20 @@
 	</div>
 	<div class="container-fluid">
 		<div id="header" class="row">
-			<div id="address" class="col-md-4 hidden-print">
+			
+			<div id="name" class="col-md-12 text-center">
+				<h1>Alan Chou</h1>
+			</div>
+
+			<div id="address" class="col-md-6 hidden-print pull-left">
 				<address style="margin-bottom: 0px;">
 				<strong><i class="fa fa-map-marker" aria-hidden="true"></i> Address</strong><br>
 				355 N. Wolfe Rd. #321,<br/>
 				Sunnyvale, California 94085<br/>
 				</address>
 			</div>
-			
-			<div id="name" class="col-md-4 text-center">
-				<h1>Alan Chou</h1>
-			</div>
 
-			<div id="contact" class="col-md-4 hidden-print">
+			<div id="contact" class="col-md-6 hidden-print">
 				<dl class="dl-horizontal pull-right" style="margin-bottom: 0px;">
 					<dt><i class="fa fa-phone-square" aria-hidden="true"></i> Phone</dt>
 					<dd><a href="tel:+1-857-498-0903">(857) 498-0903</a></dd>
@@ -131,8 +133,8 @@
 								</li>
 								<li>Developed Java tools such as Excel generator util, HTML formatter, collection diff and intersect function, tree node recursive handler</li>
 								<li>Other tourism planning functions such as tour sight blogging tool, vehicle and driver managing system, a flexible product promotion event design interface, and many more</li>
-								<li>Demonstrated the systems expandability to our customers and won two competitive cases</li>
-								<li>Interviewed four applicants, hired and trained two of them</li>
+								<li class="hidden-print">Demonstrated the systems expandability to our customers and won two competitive cases</li>
+								<li class="hidden-print">Interviewed four applicants, hired and trained two of them</li>
 							</ul>
 						</blockquote>
 						<blockquote>
